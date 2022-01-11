@@ -11,7 +11,10 @@
 ![check1]()
 
 => Length of administrator password : 20 
+
 ## Step3 : Use the substring to find the first letter of password 
+`SUBSTRING(string, start, length)`
+
 `1. Create payload to check password `
 
 ```py
