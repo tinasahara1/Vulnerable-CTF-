@@ -47,3 +47,9 @@ while True:
 			print('password administrator :' admin_pass)
 			exit()
 ```
+
+==> Password :
+
+![pass](https://github.com/tinasahara1/Vulnerable-CTF-/blob/9e2b6fb3b808e1b605f99425788ed90ca8523232/SQL/MySQL/image/error2.PNG)
+
+
