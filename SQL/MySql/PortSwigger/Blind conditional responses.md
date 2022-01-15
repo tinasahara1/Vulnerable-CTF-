@@ -9,7 +9,7 @@
 ```sql
 ' or 1=1-- -
 
-' || (select '' from dual) || '  =>Oke        => Oracle database 
+' || (select '' from dual) || '  =>Oke       
 
 1' union select '1' from users where username='administrator'-- -
 ```
