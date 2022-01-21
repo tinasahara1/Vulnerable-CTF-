@@ -85,4 +85,7 @@ for (index,value in enumerate(check.split(','))):
 
 ```
 
+## FILTER [ ]
+
+![filter](https://github.com/tinasahara1/Vulnerable-CTF-/blob/cf0bd6546f72ef8b4e95df70e96dd684f4c8bbad/SQL/MySQL/image/filter.png)
 
