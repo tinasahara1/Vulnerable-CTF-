@@ -24,7 +24,7 @@
 - show_source('flag.php')           : trả về một tệp có cú pháp PHP được tô sáng
 - highlight_file('test.txt')        : trả về một tệp có cú pháp PHP được highlight
 - var_dump(file('flag.php'))        : đọc ndung file 
-- file_get_contents("test.txt")     : đọc ndung file 
+- file_get_contents("test.txt")     : đọc nội dung của một file thành chuỗi.
 - print_r(file('flag.php'))         : đọc ndung file 
 - get_defined_functions()
 
