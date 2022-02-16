@@ -6,9 +6,11 @@
 - proc_open /popen()    : đọc ghi các luồng tương tác với 1 lệnh thực thi 
  
 
-# LỆNH TƯƠNG TÁC FILE
-- next()                : hàm trả về giá trị tiếp theo của mảng ()
-- 
+# LỆNH TƯƠNG TÁC MẢNG
+- next()                : hàm trả về giá trị tiếp theo của mảng 
+- end()                 : hàm trả về giá trị cuối của mảng
+- array_reverse($array) : hàm đảo ngược all gtri của mảng
+- prev()                : hàm trả về giá trị trước đó của mảng
 
 # LỆNH THƯ MỤC
 - chdir("images")      : chuyển thư mục hiện tại đến thư mục images     #/home/php   ==> /home/php/images
